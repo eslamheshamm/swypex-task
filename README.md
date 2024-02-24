@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# Swypex Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Why I've used This Tech Stack?
+- <b>Vite</b>: for quick start and because everything in this project is Client side and Vite is better than create-react-app as React team recommend(despite the argument between Dan Abramov and Evan You)
+- <b>Tailwind CSS</b>: I think it's the best CSS framework outthere and for productivity reasons.
+- <b>Shadcn</b>: For faster Development and it's not a UI component it's just "It's a collection of re-usable components" 
 
-Currently, two official plugins are available:
+## Usage
+- Clone the repo <code>git clone https://github.com/eslamheshamm/swypex-task</code>
+- Install the dependencies: <code>npm install</code>
+- Start the development server: <code>npm run dev</code>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Thank you!
