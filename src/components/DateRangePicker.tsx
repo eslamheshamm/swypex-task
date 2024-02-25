@@ -116,11 +116,6 @@ export function DateRangePicker({
 							startOfMonth(subMonths(new Date(), 1)),
 							endOfMonth(subMonths(new Date(), 1))
 						)}
-						{/* {createButton(
-							"Last 2 Months",
-							startOfMonth(subMonths(new Date(), 2)),
-							endOfMonth(subMonths(new Date(), 1))
-						)} */}
 					</div>
 				</PopoverContent>
 			</Popover>

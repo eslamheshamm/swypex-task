@@ -1,14 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { DateRange, SelectRangeEventHandler } from "react-day-picker";
-import {
-	endOfMonth,
-	endOfWeek,
-	startOfMonth,
-	startOfWeek,
-	subDays,
-	subMonths,
-} from "date-fns";
 import { ExchangeRateData } from "./types";
 
 const ACCESS_KEY: string = "5cf8ac3be9f820075e679169f401bbac";
@@ -43,49 +34,3 @@ export async function fetchExchangeRates(
 		throw new Error(`Error fetching exchange rates:: ${error}`);
 	}
 }
-
-export const handleButtonClick = (
-	range: string,
-	e: React.MouseEvent,
-	setDateRange: SelectRangeEventHandler,
-	dateRange: DateRange | undefined
-) => {
-	let from, to;
-	switch (range) {
-		case "This Week":
-			from = startOfWeek(new Date());
-			to = new Date();
-			break;
-		case "Last Week":
-			from = startOfWeek(subDays(new Date(), 7));
-			to = endOfWeek(subDays(new Date(), 7));
-			break;
-		case "Last 7 Days":
-			from = subDays(new Date(), 7);
-			to = new Date();
-			break;
-		case "Current Month":
-			from = startOfMonth(new Date());
-			to = new Date();
-			break;
-		case "Last Month":
-			from = startOfMonth(subMonths(new Date(), 1));
-			to = endOfMonth(subMonths(new Date(), 1));
-			break;
-		case "Last 2 Months":
-			from = startOfMonth(subMonths(new Date(), 2));
-			to = endOfMonth(subMonths(new Date(), 1));
-			break;
-		default:
-			return;
-	}
-	setDateRange(
-		{ from, to },
-		(dateRange && dateRange.from) || new Date(),
-		{
-			selected: true,
-			range_start: true,
-		},
-		e
-	);
-};
