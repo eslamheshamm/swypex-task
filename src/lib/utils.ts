@@ -2,7 +2,7 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { ExchangeRateData } from "./types";
 
-const ACCESS_KEY: string = "5cf8ac3be9f820075e679169f401bbac";
+const ACCESS_KEY: string = "5cf8ac3be9f820075e679169f401bbac"; // This is a free API key and should be kept private in a real-world application
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -12,7 +12,7 @@ export async function fetchExchangeRates(
 	startDate: string,
 	endDate: string
 ): Promise<ExchangeRateData> {
-	const baseURL = "http://api.exchangerate.host/timeframe"; // This will always use HTTP
+	const baseURL = "http://api.exchangerate.host/timeframe"; // This will always use HTTP and not HTTPS for free accounts
 	const queryParams = new URLSearchParams({
 		start_date: startDate,
 		end_date: endDate,
